@@ -64,7 +64,7 @@ namespace TimeZoneConverter.DataBuilder
                     if (entry.IsDirectory)
                         continue;
 
-                    var targetPath = Path.Combine(dir, entry.Key.Replace('/', '\\'));
+                    var targetPath = Path.Combine(dir, entry.Key.Replace('/', Path.DirectorySeparatorChar));
                     var targetDir = Path.GetDirectoryName(targetPath);
                     if (targetDir == null)
                         throw new InvalidOperationException();
